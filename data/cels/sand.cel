@@ -1,0 +1,18 @@
+# REQUIREMENTS FOR VALID PARSING 
+# tab spacing must be a multiple of 2
+# required indenting (python style) 
+
+self:
+    nil
+
+func:
+    move (d)
+
+    if ( is_type("liquid" d) ):
+        swap (d)
+
+    rand ():
+        case:
+            move (dl)
+        case:
+            move (dr)

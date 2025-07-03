@@ -1,0 +1,15 @@
+self:
+    nil
+
+func:
+    not ( is_cel ("stone" tl) && is_cel ("stone" tr) ):
+        move (d)
+	 	
+        if ( is_type ("liquid" d) ):
+            swap [d]
+ 
+        rand ():
+            case:
+                move (dl)
+            case:
+                move (dr) 
