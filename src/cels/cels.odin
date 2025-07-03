@@ -11,47 +11,57 @@ cel_str :: struct {
 	dat: cel
 }
 list :: enum {
-	sand,
 	stone,
+	sand,
 }
 gens := [?]^proc()->cel_str {
-	&sand_gen,
 	&stone_gen,
+	&sand_gen,
 }
 cel :: union {
-	sand_cel,
 	stone_cel,
+	sand_cel,
 }
-// sand.cel
+// stone.cel
 /*
 [type:label, name:self, params:{
 	[type:name, name:il]
 }]
 
 [type:label, name:func, params:{
-	[type:func, name:ove, params:{
-		[type:name, name:d]
-	}]
-	[type:switchlike, name:f, params:{
-		[type:func, name:stype, params:{
-			[type:string, name:liquid]
-			[type:name, name:d]
+	[type:switchlike, name:ot, params:{
+		[type:func, name:scel, params:{
+			[type:string, name:stone]
+			[type:name, name:tl]
+		}]
+		[type:comparison, name:&&]
+		[type:func, name:scel, params:{
+			[type:string, name:stone]
+			[type:name, name:tr]
 		}]
 	}, data:{
-		[type:func, name:wap, params:{
+		[type:func, name:ove, params:{
 			[type:name, name:d]
 		}]
-	}]
-	[type:switchlike, name:and, params:{
-	}, data:{
-		[type:label, name:ase, params:{
-			[type:func, name:ove, params:{
-				[type:name, name:dl]
+		[type:switchlike, name:f, params:{
+			[type:func, name:stype, params:{
+				[type:string, name:liquid]
+				[type:name, name:d]
 			}]
+		}, data:{
+			[type:name, name:wapd]
+		}]
+		[type:switchlike, name:and, params:{
+		}, data:{
 			[type:label, name:ase, params:{
-			}]
-			[type:func, name:ove, params:{
-				[type:name, name:dr]
+				[type:func, name:ove, params:{
+					[type:name, name:dl]
+				}]
+				[type:label, name:ase, params:{
+				}]
+				[type:func, name:ove, params:{
+					[type:name, name:dr]
+				}]
 			}]
 		}]
 	}]
